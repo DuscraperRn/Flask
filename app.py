@@ -1,4 +1,5 @@
-from flask import Flask,render_template
+import re
+from flask import Flask,render_template,request
 import gspread
 
 gc=gspread.service_account(filename='flask-profile.json')
@@ -10,8 +11,10 @@ shCon.append_row(['1','@gmail','2'])
 
 app=Flask(__name__)
 
-@app.route('/')
+@app.route('/',methods=['POST','GET'])
 def home():
+    if request.method=='POST':
+        shCon.append_row([request.form['name'],request.form['email'],request.form['message']])
     #return render_template('index.html')
     profile={
         'about': shProf.acell('B1').value,
@@ -21,3 +24,6 @@ def home():
     }
     return render_template('index.html',profile=profile)
 
+@app.route('/contact')
+def contact():
+    return render_template('contacts.html')
