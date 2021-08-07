@@ -13,14 +13,43 @@
     </figure>
     <center>
     <p class="title is-4">Mritunjay Kumar Sinha</p>
-    <p class="subtitle is-6">@Resume_made_with_Flask_&_Python</p>
+    <p class="subtitle is-6">@Resume_made_with_Flask_Python_&_Docker</p>
     <a class="button is-info is-outlined is-rounded" href='#'>Contact</a>
     <a class="button is-info is-outlined is-rounded" href="#">Linkedin</a>
     </center>
   </section>
   <section>
-    <div class="column is-three-fifths is-offset-one-fifth has-background-dark">
-      
+    <div class="column is-three-fifths is-offset-one-fifth has-background-light">
+      <div class="columns is-gapless">
+        <div class="column is=half">
+          <div class="card m-3 has-background-dark has-text-light">
+            <div class="card-content">
+              <H1><b>About</b></H1>
+              <p>{{profile.about}}</p>
+            </div>
+          </div>
+          <div class="card m-3 has-background-dark has-text-light">
+            <div class="card-content">
+              <H1><b>Education</b></H1>
+              <p>{{profile.education}}</p>
+            </div>
+          </div>
+        </div>
+        <div class="column is=half">
+          <div class="card m-3 has-background-dark has-text-light">
+            <div class="card-content">
+              <h1><b>Email</b></h1>
+              <p>{{profile.email}}</p>
+            </div>
+          </div>
+
+          <div class="card m-3 has-background-dark has-text-light">
+            <div class="card-content">
+              <h1><b>Work History</b></h1>
+              <p>{{profile.work}}</p>
+            </div>
+        </div>
+      </div>
     </div>
   </section>
   </body>
